@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>roomWeather</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+<link rel="icon" href="../images/roomWeather.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link href='../css/styles.css' rel='stylesheet'>
+</head>
+
+<body>
+
+  <div class = "container-fluid" style="height:100%;">
+    <div class="col-sm-12 col-md-12" style="height:8%; width:100%;text-align:center;">
+      <h3 style="text-align: left; float:left;"class="col-sm-4 col-md-4" > <span class="glyphicon glyphicon-stats"></span>  History</h3>
+      <h3 style="text-align: right; float:right;"class="pointer col-sm-4 col-md-4" onclick="realTime()"> <span class="glyphicon glyphicon-dashboard"></span>  Live</h3>
+      <hr style="height:1px;border:none;color:#333;background-color:#333; clear:both;"/>
+    </div>
+
+    <div class="col-sm-12 col-md-12" style="height:92%;">
+      
+      <div class="middle col-sm-6 col-md-3" style="height:100%;">
+        <div class="box" style="height:100%;">
+          <h3 style = "color:steelblue;"><span class="glyphicon glyphicon-calendar"></span>  Date</h3>
+        
+          <div class="form-group" style="padding-top:10%">
+            <div class='input-group date' id='datetimepicker1'>
+              <input type='text' class="form-control" id='date1'/>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+            </div>
+          </div>
+          <div id="dateView">
+            <button id="secondDate" type="button" class="btn btn-primary" onclick="addDate()"> + </button>
+          </div>
+          <h3 id="historyDetails" style = "color:steelblue;"><span class="glyphicon glyphicon-home" style="padding-top:30%"></span></h3>
+          <img id="historyImage" onclick="goBack()" style="height:40%; width: 100%; color:steelblue;">
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-9" style="height:50%; text-align: right; float:right;">
+        <div class="col-sm-12 col-md-12" style="height:100%">
+          <svg id="barChart" class="bars col-sm-12 col-md-12" style="height:100%">
+            <g id="bars"></g>
+            <g id="xAxis"></g>
+            <g id="yAxis"></g>
+            <g id="legend"></g>
+          </svg>
+          <div id="barTooltip" class="mapTooltip hidden"></div>
+        </div>
+      </div>
+
+      <h3 id="average" style="height:5%; text-align: center; float:center; color:red;"> <span class="glyphicon glyphicon-arrow-left"></span>     Choose a date!</h3> 
+
+      <svg id="tempDonut" class="col-sm-4 col-md-4" style="height:40%;"></svg>    
+      <svg id="humidDonut" class="col-sm-4 col-md-4" style="height:40%;"></svg>
+
+    </div>
+  </div>
+
+  
+  
+<script src="../socket.io/socket.io.js"></script>
+
+<script src="../js/script.js"></script>
+<script src="../js/historyTempDonut.js"></script>
+<script src="../js/historyHumidDonut.js"></script>
+<script src="../js/barChart.js"></script>
+
+
+
+</body>
+</html>

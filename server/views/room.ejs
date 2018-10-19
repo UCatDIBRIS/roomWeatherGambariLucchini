@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>roomWeather</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="../images/roomWeather.png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link href='css/styles.css' rel='stylesheet'>
+</head>
+
+
+<body>
+
+<div class = "container-fluid" style="height:100%;">
+  <div class="col-sm-12 col-md-12" style="height:8%; width:100%;text-align:center;">
+    <h3 id="time" style="text-align: left; float:left;"class="col-sm-4 col-md-4" > <span class="glyphicon glyphicon-hourglass"></span>Time:</h3>
+    <h3 id="history" style="text-align: right; float:right;" class="pointer col-sm-4 col-md-4" onclick="history()"> <span class="glyphicon glyphicon-stats"></span> History</h3> 
+    <hr style="height:1px;border:none;color:#333;background-color:#333; clear:both;"/>
+  </div>
+
+  <div class="col-sm-12 col-md-12" style="height:5%; width:100%;text-align:center;">
+    <h3 id="temp" class="col-sm-6 col-md-6"> <span class="glyphicon glyphicon-fire"></span> Temperature</h3> 
+    <h3 id="humidity" class="col-sm-6 col-md-6"> <span class="glyphicon glyphicon-tint"></span> Humidity</h3> 
+  </div>
+
+  <div id="tempChart" class="col-sm-12 col-md-12" style="height:42%;width:45%;text-align:left;float:left;"></div>
+  <div id="humidChart" class="col-sm-12 col-md-12" style="height:42%;width:45%;text-align:right;float:right;"></div>
+
+  <svg id="tempDonut" class="col-sm-4 col-md-4" style="height:40%;"></svg>
+  <img id="roomImage" onclick="goBack()" class="col-sm-4 col-md-4" style="height:40%;">
+  <svg id="humidDonut" class="col-sm-4 col-md-4" style="height:40%;"></svg>
+
+</div>
+
+<script src="socket.io/socket.io.js"></script>
+
+<script src="js/script.js"></script>
+<script src="js/tempChart.js"></script>
+<script src="js/humidChart.js"></script>
+<script src="js/tempDonut.js"></script>
+<script src="js/humidDonut.js"></script>
+
+</body>
+</html>

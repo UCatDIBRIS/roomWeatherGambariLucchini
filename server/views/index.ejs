@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>roomWeather</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="../images/roomWeather.png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link rel='stylesheet' href='css/styles.css'>
+
+</head>
+
+<body>
+
+<div class = "container-fluid" style="height:100%">
+  <div class="col-sm-12 col-md-12" style="height:8%; width:100%;text-align:center;">
+    <h3 style="text-align: left; float:left;"class="col-sm-4 col-md-4" ><span class="mdi mdi-cloud-braces" style="font-size: 30px"></span>  roomWeather</h3>
+    <h5 style="text-align: right; float: right; padding-top: 20px " class="col-sm-4 col-md-4"> <span class="glyphicon glyphicon-education"></span>  University of Genoa - DIBRIS </h5> 
+    <hr style="height:1px;border:none;color:#333;background-color:#333; clear:both;"/>
+  </div>
+
+  <div id="divMap" class="col-sm-12 col-md-12" style="height:92%;text-align: center;">
+    <img id="map" src='images/secondFloor.png' usemap="#map" style="width: 1000px;">
+
+    <map name="map">
+      <area class="pointer" shape="rect" coords="175,407,245,348" alt="room209">
+      <area class="pointer" shape="rect" coords="175,290,245,348"  alt="room212" href="room?room=212">
+      <area class="pointer" shape="rect" coords="305,420,355,478"  alt="room203" href="room?room=203">
+      <area class="pointer" shape="rect" coords="265,230,345,298"  alt="room211" href="room?room=211">
+    </map>
+    <svg >
+      <g id="legendMap"></g>
+    </svg>
+  
+  </div>
+</div>
+
+
+<script src="socket.io/socket.io.js"></script>
+<script src="../js/index.js"></script>
+
+
+</body>
+</html>
